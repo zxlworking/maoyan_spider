@@ -26,7 +26,7 @@ class RequestMaoYanDetail(BaseRequest):
             movie_detail_path = "//div[@class='banner']"
 
             movie_detail_object = driver.find_element_by_xpath(movie_detail_path)
-            # print("movie_detail_object = ", movie_detail_object)
+            print("movie_detail_object = ", movie_detail_object)
 
         except Exception as exception:
             print("exception = ", exception)

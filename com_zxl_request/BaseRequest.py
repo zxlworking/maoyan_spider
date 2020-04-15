@@ -25,12 +25,14 @@ class BaseRequest:
         # 创建chrome参数对象
         opt = webdriver.ChromeOptions()
 
-        opt.add_experimental_option('excludeSwitches', ['enable-automation'])
+        # opt.add_experimental_option('excludeSwitches', ['enable-automation'])
 
         # 把chrome设置成无界面模式，不论windows还是linux都可以，自动适配对应参数
         # opt.set_headless()
         opt.add_argument('--headless')
         opt.add_argument('--proxy-server=http://127.0.0.1:8080')
+
+        opt.add_experimental_option('excludeSwitches', ['enable-automation'])
 
         pre_fs = {"profile.managed_default_content_settings.images": 2}
         opt.add_experimental_option("prefs", pre_fs)
@@ -42,4 +44,6 @@ class BaseRequest:
 
         driver.get(url)
 
+        # while True:
+        #     continue
         return driver

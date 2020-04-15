@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8afb4a0b-62d7-4f8d-844b-212d23c0736c" name="Default Changelist" comment="" />
+    <list default="true" id="8afb4a0b-62d7-4f8d-844b-212d23c0736c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com_zxl_request/BaseRequest.py" beforeDir="false" afterPath="$PROJECT_DIR$/com_zxl_request/BaseRequest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com_zxl_request/RequestMaoYan.py" beforeDir="false" afterPath="$PROJECT_DIR$/com_zxl_request/RequestMaoYan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com_zxl_request/RequestMaoYanDetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/com_zxl_request/RequestMaoYanDetail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redirect_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/redirect_request.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,12 +15,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com_zxl_request/RequestMaoYan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="94" column="53" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="53" />
+            <state relative-caret-position="358">
+              <caret line="128" column="60" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="60" />
               <folding>
                 <element signature="e#33#42#0" expanded="true" />
               </folding>
@@ -22,14 +28,65 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mitmdump_log_1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-20407">
+              <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com_zxl_request/RequestMaoYanDetail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="61" column="66" lean-forward="true" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
-              <folding>
-                <element signature="e#33#46#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="491">
+              <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mitmdump_log_3.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="14" column="273" selection-start-line="14" selection-start-column="269" selection-end-line="14" selection-end-column="273" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/redirect_request.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mitmdump_log_4.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="4117" column="44" lean-forward="true" selection-start-line="4117" selection-start-column="44" selection-end-line="4117" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mitmdump_log_2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="529" column="111813" selection-start-line="529" selection-start-column="111792" selection-end-line="529" selection-end-column="111813" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com_zxl_request/BaseRequest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="47" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -45,8 +102,17 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>movies-list</find>
       <find>list-pager</find>
+      <find>dd</find>
+      <find>movies-list</find>
+      <find>name line-ellipsis</find>
+      <find>Cookie</find>
+      <find>https://maoyan.com/films?showType=1</find>
+      <find>_Selenium_IDE_Recorder</find>
+      <find>Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Mobile Safari/537.36</find>
+      <find>_selenium</find>
+      <find>cookie</find>
+      <find>__webdriver_script_fn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -63,6 +129,10 @@
         <option value="$PROJECT_DIR$/com_zxl_db/MaoYanCelebrityDB.py" />
         <option value="$PROJECT_DIR$/com_zxl_db/MaoYanAwardDB.py" />
         <option value="$PROJECT_DIR$/com_zxl_request/RequestMaoYan.py" />
+        <option value="$PROJECT_DIR$/mitmdump_log_1.txt" />
+        <option value="$PROJECT_DIR$/mitmdump_log_2.txt" />
+        <option value="$PROJECT_DIR$/com_zxl_request/BaseRequest.py" />
+        <option value="$PROJECT_DIR$/redirect_request.py" />
         <option value="$PROJECT_DIR$/com_zxl_request/RequestMaoYanDetail.py" />
       </list>
     </option>
@@ -77,7 +147,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="204" />
     <option name="y" value="12" />
     <option name="width" value="1400" />
@@ -88,7 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,11 +179,19 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/com_zxl_knn_font" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -202,62 +279,53 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586854205478</updated>
-      <workItem from="1586854206627" duration="633000" />
+      <workItem from="1586854206627" duration="3424000" />
+      <workItem from="1586911639031" duration="3424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="633000" />
+    <option name="totallyTimeSpent" value="6848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3846939" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/maoyan_spider$RequestMaoYan.coverage" NAME="RequestMaoYan Coverage Results" MODIFIED="1586854591912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com_zxl_request" />
-    <SUITE FILE_PATH="coverage/maoyan_spider$RequestMaoYanDetail.coverage" NAME="RequestMaoYanDetail Coverage Results" MODIFIED="1586854894555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com_zxl_request" />
+    <SUITE FILE_PATH="coverage/maoyan_spider$RequestMaoYan.coverage" NAME="RequestMaoYan Coverage Results" MODIFIED="1586913610002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com_zxl_request" />
+    <SUITE FILE_PATH="coverage/maoyan_spider$RequestMaoYanDetail.coverage" NAME="RequestMaoYanDetail Coverage Results" MODIFIED="1586915486407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com_zxl_request" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/redirect_request.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/com_zxl_data/MaoYanAwardBean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com_zxl_request/BaseRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="32" column="64" lean-forward="true" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -310,26 +378,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com_zxl_knn_font/fontdata.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mitmdump_log_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20407">
+          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mao_yan_cookie.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/com_zxl_request/RequestMaoYan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="94" column="53" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="53" />
+        <state relative-caret-position="358">
+          <caret line="128" column="60" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="60" />
           <folding>
             <element signature="e#33#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com_zxl_knn_font/fontdata.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/com_zxl_request/BaseRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="47" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mitmdump_log_3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="14" column="273" selection-start-line="14" selection-start-column="269" selection-end-line="14" selection-end-column="273" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mitmdump_log_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="529" column="111813" selection-start-line="529" selection-start-column="111792" selection-end-line="529" selection-end-column="111813" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redirect_request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mitmdump_log_4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="4117" column="44" lean-forward="true" selection-start-line="4117" selection-start-column="44" selection-end-line="4117" selection-end-column="44" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com_zxl_request/RequestMaoYanDetail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="61" column="66" lean-forward="true" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
-          <folding>
-            <element signature="e#33#46#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="491">
+          <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
         </state>
       </provider>
     </entry>

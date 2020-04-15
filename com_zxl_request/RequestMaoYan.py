@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
 import re
+import time
 
 from selenium.common.exceptions import NoSuchElementException
 
@@ -19,6 +20,19 @@ class RequestMaoYan(BaseRequest):
         self.mao_yan_now_db = MaoYanDB(MaoYanDB.NOW_TABLE_NAME)
         self.mao_yan_future_db = MaoYanDB(MaoYanDB.FUTURE_TABLE_NAME)
         self.mao_yan_history_db = MaoYanDB(MaoYanDB.HISTORY_TABLE_NAME)
+
+    def login_mao_yan(self):
+        driver = self.get_web_content(
+            "https://passport.meituan.com/account/unitivelogin?service=maoyan&continue=https%3A%2F%2Fmaoyan.com%2Fpassport%2Flogin%3Fredirect%3D%252F")
+        user_name_input = driver.find_element_by_xpath("//input[@class='f-text phone-input']")
+        pass_word_input = driver.find_element_by_xpath("//input[@class='f-text pw-input']")
+        login_input = driver.find_element_by_xpath("//input[@value='登录']")
+        user_name_input.send_keys('15850687360')
+        pass_word_input.send_keys('working')
+        login_input.click()
+        time.sleep(10)
+        print("login success")
+        return driver
 
     def request(self, type, url):
         print("request::type = %d " % type)
@@ -127,6 +141,8 @@ if __name__ == "__main__":
     # 历史
     # request.request(3, "https://maoyan.com/films?showType=3")
     # request.close_db()
+
+    # request.login_mao_yan()
 
     request.start_now_mao_yan()
 
