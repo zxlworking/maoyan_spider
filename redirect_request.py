@@ -29,7 +29,7 @@ def request(flow):
     print("request--->flow.request.url = ", flow.request.url)
     print("request--->flow.request.method = ", flow.request.method)
     print("request--->flow.request.headers = ", flow.request.headers)
-    print("request--->flow.request.headers = ", flow.request.get_text())
+    print("request--->flow.request.get_text = ", flow.request.get_text())
     print("request-------------------end------------------------------\n\n")
     # if flow.request.url.startswith('https://passport.meituan.com/account'):
     #     cookie = flow.request.headers['Cookie']
@@ -62,9 +62,54 @@ def response(flow):
         print("webdriver_key==============", webdriver_key)
         if webdriver_key in flow.response.text:
             print(webdriver_key, "==========in==============", flow.request.url)
-            # flow.response.text = flow.response.text.replace(webdriver_key, 'userAgent')
-        # ctx.log.info('Remove"{}"from{}.'.format(webdriver_key, flow.request.url))
-        flow.response.text = flow.response.text.replace('"{}"'.format(webdriver_key), '"NO-SUCH-ATTR"')
-        flow.response.text = flow.response.text.replace('t.webdriver', 'false')
-        flow.response.text = flow.response.text.replace('ChromeDriver', '')
-        flow.response.text = flow.response.text.replace('webdriver', 'userAgent')
+    #         # flow.response.text = flow.response.text.replace(webdriver_key, 'userAgent')
+    #     # ctx.log.info('Remove"{}"from{}.'.format(webdriver_key, flow.request.url))
+    #     # flow.response.text = flow.response.text.replace('"{}"'.format(webdriver_key), '"NO-SUCH-ATTR"')
+    #     # flow.response.text = flow.response.text.replace('t.webdriver', 'false')
+    #     # flow.response.text = flow.response.text.replace('ChromeDriver', '')
+    #     # flow.response.text = flow.response.text.replace('webdriver', 'userAgent')
+
+    print("\n\n")
+    if flow.request.url.startswith('https://static.meituan.net/bs/yoda-static/file:file/d/js/slider.91b17a4b2b.js'):
+        print("__webdriver_script_fn--->in--->", "__webdriver_script_fn" in flow.response.text)
+        if "__webdriver_script_fn" in flow.response.text:
+            print("==========__webdriver_script_fn in==============", flow.request.url)
+            flow.response.text = flow.response.text.replace("__webdriver_script_fn", 'zxl')
+            print("==========__webdriver_script_fn in==============", "__webdriver_script_fn" in flow.response.text)
+            print("\n\n")
+
+        print("__$webdriverAsyncExecutor--->in--->", "__$webdriverAsyncExecutor" in flow.response.text)
+        if "__$webdriverAsyncExecutor" in flow.response.text:
+            print("==========__$webdriverAsyncExecutor in==============", flow.request.url)
+            flow.response.text = flow.response.text.replace("__$webdriverAsyncExecutor", 'zxl')
+            print("==========__$webdriverAsyncExecutor in==============", "__$webdriverAsyncExecutor" in flow.response.text)
+            print("\n\n")
+
+        print("webdriver,_Selenium_IDE_Recorder,_selenium,calledSelenium--->in--->", "webdriver,_Selenium_IDE_Recorder,_selenium,calledSelenium" in flow.response.text)
+        if "webdriver,_Selenium_IDE_Recorder,_selenium,calledSelenium" in flow.response.text:
+            print("==========webdriver,_Selenium_IDE_Recorder,_selenium,calledSelenium in==============", flow.request.url)
+            flow.response.text = flow.response.text.replace("webdriver,_Selenium_IDE_Recorder,_selenium,calledSelenium", 'zxl')
+            print("==========webdriver,_Selenium_IDE_Recorder,_selenium,calledSelenium in==============", "webdriver,_Selenium_IDE_Recorder,_selenium,calledSelenium" in flow.response.text)
+            print("\n\n")
+
+        print("ChromeDriverwjers908fljsdf37459fsdfgdfwru--->in--->", "ChromeDriverwjers908fljsdf37459fsdfgdfwru" in flow.response.text)
+        if "ChromeDriverwjers908fljsdf37459fsdfgdfwru" in flow.response.text:
+            print("==========ChromeDriverwjers908fljsdf37459fsdfgdfwru in==============", flow.request.url)
+            flow.response.text = flow.response.text.replace("ChromeDriverwjers908fljsdf37459fsdfgdfwru", 'zxl')
+            print("==========ChromeDriverwjers908fljsdf37459fsdfgdfwru in==============", "ChromeDriverwjers908fljsdf37459fsdfgdfwru" in flow.response.text)
+            print("\n\n")
+
+        print("__lastWatirAlert--->in--->", "__lastWatirAlert" in flow.response.text)
+        if "__lastWatirAlert" in flow.response.text:
+            print("==========__lastWatirAlert in==============", flow.request.url)
+            flow.response.text = flow.response.text.replace("__lastWatirAlert", 'zxl')
+            print("==========__lastWatirAlert in==============", "ChromeDriverwjers908fljsdf37459fsdfgdfwru" in flow.response.text)
+            print("\n\n")
+
+        print("navigator.webdriver--->in--->", "navigator.webdriver" in flow.response.text)
+        print('navigator.webdriver ? "gw" : ""', 'navigator.webdriver ? "gw" : ""' in flow.response.text)
+        if 'navigator.webdriver ? "gw" : ""' in flow.response.text:
+            print("==========navigator in==============", flow.request.url)
+            flow.response.text = flow.response.text.replace('navigator.webdriver ? "gw" : ""', '')
+            print("==========navigator in==============" in flow.response.text)
+            print("\n\n")

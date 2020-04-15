@@ -11,7 +11,7 @@ class BaseDB:
     # host = 'zxltest.zicp.vip'
     # port = '42278'
     urser_name = "root"
-    pass_word = "root"
+    pass_word = "Aa123456"
     db_name = 'joke'
 
     CREATE_TABLE_SQL = ("")

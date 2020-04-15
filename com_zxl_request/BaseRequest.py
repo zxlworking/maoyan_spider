@@ -29,7 +29,7 @@ class BaseRequest:
 
         # 把chrome设置成无界面模式，不论windows还是linux都可以，自动适配对应参数
         # opt.set_headless()
-        opt.add_argument('--headless')
+        # opt.add_argument('--headless')
         opt.add_argument('--proxy-server=http://127.0.0.1:8080')
 
         opt.add_experimental_option('excludeSwitches', ['enable-automation'])
@@ -44,6 +44,6 @@ class BaseRequest:
 
         driver.get(url)
 
-        # while True:
-        #     continue
+        while True:
+            continue
         return driver
