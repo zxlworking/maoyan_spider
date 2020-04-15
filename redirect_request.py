@@ -72,6 +72,8 @@ def response(flow):
     if flow.request.url.startswith('https://verify.meituan.com/v2/ext_api/spiderindefence/verify'):
         flow.response.text = '{"status":1,"data":{"response_code":"9c8cbc4b68a848d5970ca3ee8c10c549"},"error":null}'
 
+    if flow.request.url.startswith('http://maoyan.com/films?showType=1'):
+        flow.response.text = flow.response.text.replace("('Location', '*')", "('Location', 'http://maoyan.com/films?showType=1')")
 
     print("\n\n")
     if flow.request.url.startswith('https://static.meituan.net/bs/yoda-static/file:file/d/js/slider.91b17a4b2b.js'):
