@@ -69,6 +69,10 @@ def response(flow):
     #     # flow.response.text = flow.response.text.replace('ChromeDriver', '')
     #     # flow.response.text = flow.response.text.replace('webdriver', 'userAgent')
 
+    if flow.request.url.startswith('https://verify.meituan.com/v2/ext_api/spiderindefence/verify'):
+        flow.response.text = '{"status":1,"data":{"response_code":"9c8cbc4b68a848d5970ca3ee8c10c549"},"error":null}'
+
+
     print("\n\n")
     if flow.request.url.startswith('https://static.meituan.net/bs/yoda-static/file:file/d/js/slider.91b17a4b2b.js'):
         print("__webdriver_script_fn--->in--->", "__webdriver_script_fn" in flow.response.text)
