@@ -81,6 +81,8 @@ class RequestMaoYanDetail(BaseRequest):
 
             mao_yan_detail_bean = MaoYanDetailBean()
 
+            mao_yan_detail_bean.movie_id = movie_id
+
             self.parse_avatar_url(movie_detail_object, mao_yan_detail_bean)
             self.parse_movie_name(movie_detail_object, mao_yan_detail_bean)
             self.parse_movie_header(movie_detail_object, mao_yan_detail_bean)
@@ -88,6 +90,11 @@ class RequestMaoYanDetail(BaseRequest):
             self.parse_movie_score_content(movie_detail_object, mao_yan_detail_bean)
             self.parse_movie_stats_people_content(movie_detail_object, mao_yan_detail_bean)
             self.parse_movie_box_content(movie_detail_object, mao_yan_detail_bean)
+
+            self.parse_movie_detail(movie_id, driver, mao_yan_detail_bean)
+
+            dict = mao_yan_detail_bean.create_bean_dict()
+            print("mao_yan_detail_bean = ", dict)
 
             mao_yan_detail_db = MaoYanDetailDB()
             temp_detail_bean = mao_yan_detail_db.query_by_movie_id(movie_id)
@@ -97,7 +104,6 @@ class RequestMaoYanDetail(BaseRequest):
                 mao_yan_detail_db.insert_bean(mao_yan_detail_bean.create_bean_dict())
             mao_yan_detail_db.close_db()
 
-            self.parse_movie_detail(movie_id, driver)
         except Exception as exception:
             print("exception = ", exception)
 
@@ -229,6 +235,7 @@ class RequestMaoYanDetail(BaseRequest):
             print("no_movie_score_content_exception = ", no_movie_score_content_exception)
         mao_yan_detail_bean.movie_score_content = movie_score_content
 
+    # 电影评论人数
     def parse_movie_stats_people_content(self, movie_detail_object, mao_yan_detail_bean):
         movie_introduce_path = ".//div[@class='celeInfo-right clearfix']"
         movie_introduce_object = movie_detail_object.find_element_by_xpath(movie_introduce_path)
@@ -244,7 +251,7 @@ class RequestMaoYanDetail(BaseRequest):
             movie_stats_people_count_path = ".//span"
             movie_stats_people_count_object = movie_stats_people_count_parent_object.find_element_by_xpath(
                 movie_stats_people_count_path)
-            # movie_stats_people_count_content = self.get_mao_yan_num(woff_url, movie_stats_people_count_object.text, self.parent_path + "stats_people_count.png")
+
             movie_stats_people_count_content = self.get_mao_yan_num_by_object(movie_stats_people_count_object)
             temp_movie_stats_people_count_unit_content = movie_stats_people_count_object.text
             # print("movie_stats_people_count_content = ", movie_stats_people_count_content,
@@ -262,6 +269,7 @@ class RequestMaoYanDetail(BaseRequest):
         mao_yan_detail_bean.movie_stats_people_count_content = movie_stats_people_count_content
         mao_yan_detail_bean.movie_stats_people_count_unit_content = movie_stats_people_count_unit_content
 
+    # 电影票房
     def parse_movie_box_content(self, movie_detail_object, mao_yan_detail_bean):
         movie_introduce_path = ".//div[@class='celeInfo-right clearfix']"
         movie_introduce_object = movie_detail_object.find_element_by_xpath(movie_introduce_path)
@@ -324,13 +332,13 @@ class RequestMaoYanDetail(BaseRequest):
 
         return num_content_str
 
-    def parse_movie_detail(self, movie_id, driver):
+    def parse_movie_detail(self, movie_id, driver, mao_yan_detail_bean):
         # ================tab==================
         tab_content_path = "//div[@class='tab-content-container']"
         tab_content_object = driver.find_element_by_xpath(tab_content_path)
 
         # ================简介 评论============
-        introduce_content = ''
+        mao_yan_detail_bean.introduce_content = ''
         comment_list_object = None
         tab_celebrity_list_object = None
         tab_award_list_object = None
@@ -340,23 +348,19 @@ class RequestMaoYanDetail(BaseRequest):
         tab_content_detail_object = tab_content_object.find_element_by_xpath(tab_content_detail_path)
 
         tab_content_detail_list_path = ".//div[@class='module']"
-        tab_content_detail_list_object = tab_content_detail_object.find_elements_by_xpath(
-            tab_content_detail_list_path)
-        # print("tab_content_detail_list_object = ", len(tab_content_detail_list_object),
-        #       tab_content_detail_list_object)
+        tab_content_detail_list_object = tab_content_detail_object.find_elements_by_xpath(tab_content_detail_list_path)
+        print("tab_content_detail_list_object = ", tab_content_detail_list_object)
         if len(tab_content_detail_list_object) > 0:
-            introduce_content = ''
             try:
                 introduce_object = tab_content_detail_list_object[0].find_element_by_xpath(".//span[@class='dra']")
-                introduce_content = introduce_object.text
+                mao_yan_detail_bean.introduce_content = introduce_object.text
             except NoSuchElementException as no_introduce_content_exception:
                 print("no_introduce_content_exception = ", no_introduce_content_exception)
 
             try:
-                comment_list_object = tab_content_detail_list_object[
-                    len(tab_content_detail_list_object) - 1].find_element_by_xpath(
-                    ".//div[@class='comment-list-container']").find_elements_by_xpath(
-                    ".//li[@class='comment-container ']")
+                comment_list_object = tab_content_detail_list_object[4].\
+                    find_element_by_xpath(".//div[@class='comment-list-container']").\
+                    find_elements_by_xpath(".//li[starts-with(@class,'comment-container ')]")
             except NoSuchElementException as no_comment_list_object_exception:
                 print("no_comment_list_object_exception = ", no_comment_list_object_exception)
         # ================演职人员==============
@@ -547,8 +551,9 @@ class RequestMaoYanDetail(BaseRequest):
             mao_yan_img_collection_db.close_db()
 
     def parse_comment_list(self, movie_id, comment_list_object):
+        print("comment_list_object = ", comment_list_object)
         if comment_list_object is not None:
-            # print("comment_list_object = ", len(comment_list_object), comment_list_object)
+            print("comment_list_object len = ", len(comment_list_object))
 
             mao_yan_comment_db = MaoYanCommentDB()
             mao_yan_comment_db.delete_by_movie_id(movie_id)
@@ -601,5 +606,7 @@ class RequestMaoYanDetail(BaseRequest):
 if __name__ == "__main__":
     requestMaoYanDetail = RequestMaoYanDetail()
 
-    # requestMaoYanDetail.request("1211270", "https://maoyan.com/films/1211270")
+    # feature
+    # requestMaoYanDetail.request("1217023", "https://maoyan.com/films/1217023")
+    # now
     requestMaoYanDetail.request("1258163", "http://maoyan.com/films/1258163")

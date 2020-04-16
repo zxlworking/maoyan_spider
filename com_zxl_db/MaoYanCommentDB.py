@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # coding=utf-8
 
-from com_zxl_data.MaoYanCelebrityBean import MaoYanCelebrityBean
 from com_zxl_data.MaoYanCommentBean import MaoYanCommentBean
 from com_zxl_db.BaseDB import BaseDB
 
