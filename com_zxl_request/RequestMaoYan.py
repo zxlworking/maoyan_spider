@@ -42,7 +42,7 @@ class RequestMaoYan(BaseRequest):
         print("request::type = %d " % type)
         print("request::url = %s " % url)
         driver = self.get_web_content(url)
-        print(driver.page_source)
+        # print(driver.page_source)
 
 
         # try:
@@ -74,6 +74,7 @@ class RequestMaoYan(BaseRequest):
         movie_items_path = ".//dd"
         movie_items_obj = movies_list_obj.find_elements_by_xpath(movie_items_path)
 
+        print("----------movie_items_obj len-----------", len(movie_items_obj))
         for movie_item in movie_items_obj:
             print("----------start-----------")
             movie_item_path = ".//div[@class='movie-item film-channel']"
@@ -141,11 +142,13 @@ class RequestMaoYan(BaseRequest):
             for page_item in page_items:
                 page_item_text = page_item.text
                 if page_item_text == '下一页':
-                    self.request(type, page_item.get_attribute("href"))
+                    next_page_url = page_item.get_attribute("href")
+                    self.request(type, next_page_url)
         except NoSuchElementException as e:
             print(e)
 
         driver.close()
+        print("----------driver.close url-----------", url)
 
     def close_db(self):
         self.mao_yan_now_db.close_db()

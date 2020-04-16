@@ -6,6 +6,7 @@
 #        flow.request.host = '192.168.29.128'
 #        flow.request.port = 8080
 import platform
+import re
 
 
 def request(flow):
@@ -72,8 +73,29 @@ def response(flow):
     if flow.request.url.startswith('https://verify.meituan.com/v2/ext_api/spiderindefence/verify'):
         flow.response.text = '{"status":1,"data":{"response_code":"9c8cbc4b68a848d5970ca3ee8c10c549"},"error":null}'
 
-    if flow.request.url.startswith('http://maoyan.com/films?showType=1'):
-        flow.response.text = flow.response.text.replace("('Location', '*')", "('Location', 'http://maoyan.com/films?showType=1')")
+    if flow.request.url.startswith('https://maoyan.com/films?showType='):
+        result = re.findall(".*?\'Location\', \'(.*?)\'.*?", flow.response.text)
+        print(result)
+        if len(result) > 0:
+            flow.response.text = flow.response.text.replace(result[0], "http://maoyan.com/films?showType=1")
+        if flow.response.headers['Location']:
+            print("modify flow.response.headers['Location']")
+            flow.response.headers['Location'] = "http://maoyan.com/films?showType=1"
+
+    if flow.request.url.startswith('https://maoyan.com/films/'):
+        result_movie_id = re.findall("(\\d+)", flow.request.url)
+        print(result_movie_id)
+        print(len(result_movie_id))
+
+        result = re.findall(".*?\'Location\', \'(.*?)\'\).*?", str(flow.response.headers))
+        print(result)
+
+        if len(result_movie_id) > 0 and flow.response.headers['Location']:
+            print("modify flow.response.headers['Location']")
+            flow.response.headers['Location'] = "http://maoyan.com/films/" + result_movie_id[0]
+        flow.request.headers['xxx'] = "123"
+        print(flow.response.headers)
+
 
     print("\n\n")
     if flow.request.url.startswith('https://static.meituan.net/bs/yoda-static/file:file/d/js/slider.91b17a4b2b.js'):

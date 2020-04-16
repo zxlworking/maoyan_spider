@@ -1,3 +1,5 @@
+import sys
+
 import numpy as np
 import operator
 from fontTools.ttLib import TTFont
@@ -19,7 +21,7 @@ def classify0(inX, dataSet, labels, k):
 
 def file2matrix():
     #构造训练集
-    with open('../fontdata.txt') as file:
+    with open(sys.path[0] + '/' + 'fontdata.txt') as file:
         arrayOlines = file.readlines()
     numberOfLines = len(arrayOlines)
     returnMat = np.zeros((numberOfLines,200))

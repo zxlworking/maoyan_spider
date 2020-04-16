@@ -44,6 +44,6 @@ class BaseRequest:
 
         driver.get(url)
 
-        while True:
-            continue
+        # while True:
+        #     continue
         return driver
