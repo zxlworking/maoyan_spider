@@ -45,28 +45,28 @@ class RequestMaoYan(BaseRequest):
         # print(driver.page_source)
 
 
-        # try:
-        #     box_wrapper_path = "//div[@class='box-wrapper ']"
-        #     box_wrapper_object = WebDriverWait(driver, 60).until(expected_conditions.presence_of_element_located((By.XPATH, box_wrapper_path)))
-        #     print("box_wrapper_object = ", box_wrapper_object)
-        #     if box_wrapper_object is not None:
-        #         # print("box_wrapper_object.get_attribute = ", box_wrapper_object.get_attribute('outerHTML'))
-        #         boxStatic_path = "//div[@class='boxStatic ']"
-        #         boxStatic_object = box_wrapper_object.find_element_by_xpath(boxStatic_path)
-        #
-        #         moveingBar_path = "//div[@class='moveingBar ']"
-        #         moveingBar_object = box_wrapper_object.find_element_by_xpath(moveingBar_path)
-        #
-        #         ActionChains(driver).click_and_hold(boxStatic_object).perform()
-        #         while True:
-        #             ActionChains(driver).move_by_offset(50, 0).perform()
-        #             # print("boxStatic_object.get_attribute = ", boxStatic_object.get_attribute('style'))
-        #             # print("moveingBar_object.get_attribute = ", moveingBar_object.get_attribute('style'))
-        #             print("box_wrapper_object.get_attribute = ", box_wrapper_object.get_attribute('outerHTML'))
-        # except Exception as no_box_wrapper_exception:
-        #     print("no_box_wrapper_exception = ", no_box_wrapper_exception)
-        #
-        # time.sleep(10)
+        try:
+            box_wrapper_path = "//div[@class='box-wrapper ']"
+            box_wrapper_object = WebDriverWait(driver, 60).until(expected_conditions.presence_of_element_located((By.XPATH, box_wrapper_path)))
+            print("box_wrapper_object = ", box_wrapper_object)
+            if box_wrapper_object is not None:
+                # print("box_wrapper_object.get_attribute = ", box_wrapper_object.get_attribute('outerHTML'))
+                boxStatic_path = "//div[@class='boxStatic ']"
+                boxStatic_object = box_wrapper_object.find_element_by_xpath(boxStatic_path)
+
+                moveingBar_path = "//div[@class='moveingBar ']"
+                moveingBar_object = box_wrapper_object.find_element_by_xpath(moveingBar_path)
+
+                ActionChains(driver).click_and_hold(boxStatic_object).perform()
+                while True:
+                    ActionChains(driver).move_by_offset(50, 0).perform()
+                    # print("boxStatic_object.get_attribute = ", boxStatic_object.get_attribute('style'))
+                    # print("moveingBar_object.get_attribute = ", moveingBar_object.get_attribute('style'))
+                    print("box_wrapper_object.get_attribute = ", box_wrapper_object.get_attribute('outerHTML'))
+        except Exception as no_box_wrapper_exception:
+            print("no_box_wrapper_exception = ", no_box_wrapper_exception)
+
+        time.sleep(10)
 
         movies_list_path = "//div[@class='movies-list']"
         movies_list_obj = driver.find_element_by_xpath(movies_list_path)

@@ -223,7 +223,7 @@ class MaoYanDetailDB(BaseDB):
              COLUME_MOVIE_BOX_UNIT_CONTENT,
              COLUME_MOVIE_INTRODUCE_CONTENT) in cursor:
             mao_yan_detail_bean = MaoYanDetailBean()
-            return mao_yan_detail_bean.create_bean(COLUME_ID,
+            mao_yan_detail_bean.set_data(COLUME_ID,
                                                    COLUME_MOVIE_ID,
                                                    COLUME_MOVIE_AVATAR,
                                                    COLUME_MOVIE_NAME,
@@ -241,6 +241,7 @@ class MaoYanDetailDB(BaseDB):
                                                    COLUME_MOVIE_BOX_VALUE_CONTENT,
                                                    COLUME_MOVIE_BOX_UNIT_CONTENT,
                                                    COLUME_MOVIE_INTRODUCE_CONTENT)
+            return mao_yan_detail_bean
         return None
 
     def query_all(self):
@@ -267,23 +268,23 @@ class MaoYanDetailDB(BaseDB):
              COLUME_MOVIE_BOX_UNIT_CONTENT,
              COLUME_MOVIE_INTRODUCE_CONTENT) in cursor:
             mao_yan_detail_bean = MaoYanDetailBean()
-            mao_yan_detail_bean = mao_yan_detail_bean.create_bean(COLUME_ID,
-                                                                  COLUME_MOVIE_ID,
-                                                                  COLUME_MOVIE_AVATAR,
-                                                                  COLUME_MOVIE_NAME,
-                                                                  COLUME_MOVIE_EN_NAME,
-                                                                  COLUME_MOVIE_CATEGORY,
-                                                                  COLUME_MOVIE_COUNTRY,
-                                                                  COLUME_MOVIE_DURATION,
-                                                                  COLUME_MOVIE_RELEASE_INFO,
-                                                                  COLUME_MOVIE_RELEASE_TIME,
-                                                                  COLUME_MOVIE_RELEASE_AREA,
-                                                                  COLUME_MOVIE_SCORE_CONTENT,
-                                                                  COLUME_MOVIE_WANT_TO_SEE_COUNT,
-                                                                  COLUME_MOVIE_STATS_PEOPLE_COUNT_CONTENT,
-                                                                  COLUME_MOVIE_STATS_PEOPLE_COUNT_UNIT_CONTENT,
-                                                                  COLUME_MOVIE_BOX_VALUE_CONTENT,
-                                                                  COLUME_MOVIE_BOX_UNIT_CONTENT,
-                                                                  COLUME_MOVIE_INTRODUCE_CONTENT)
+            mao_yan_detail_bean.set_data(COLUME_ID,
+                                          COLUME_MOVIE_ID,
+                                          COLUME_MOVIE_AVATAR,
+                                          COLUME_MOVIE_NAME,
+                                          COLUME_MOVIE_EN_NAME,
+                                          COLUME_MOVIE_CATEGORY,
+                                          COLUME_MOVIE_COUNTRY,
+                                          COLUME_MOVIE_DURATION,
+                                          COLUME_MOVIE_RELEASE_INFO,
+                                          COLUME_MOVIE_RELEASE_TIME,
+                                          COLUME_MOVIE_RELEASE_AREA,
+                                          COLUME_MOVIE_SCORE_CONTENT,
+                                          COLUME_MOVIE_WANT_TO_SEE_COUNT,
+                                          COLUME_MOVIE_STATS_PEOPLE_COUNT_CONTENT,
+                                          COLUME_MOVIE_STATS_PEOPLE_COUNT_UNIT_CONTENT,
+                                          COLUME_MOVIE_BOX_VALUE_CONTENT,
+                                          COLUME_MOVIE_BOX_UNIT_CONTENT,
+                                          COLUME_MOVIE_INTRODUCE_CONTENT)
             mao_yan_detail_bean_list.append(mao_yan_detail_bean)
         return mao_yan_detail_bean_list

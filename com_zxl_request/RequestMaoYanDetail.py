@@ -39,7 +39,7 @@ class RequestMaoYanDetail(BaseRequest):
         driver = self.get_web_content(movie_detail_url)
 
         page_content = driver.page_source
-        print(page_content)
+        # print(page_content)
 
         try:
             movie_detail_path = "//div[@class='banner']"
@@ -227,7 +227,7 @@ class RequestMaoYanDetail(BaseRequest):
         try:
             movie_score_path = ".//span[@class='index-left info-num ']"
             movie_score_object = movie_stats_object.find_element_by_xpath(movie_score_path)
-            print("movie_score_object.innerHTML = ", movie_score_object.get_attribute('innerHTML'))
+            # print("movie_score_object.innerHTML = ", movie_score_object.get_attribute('innerHTML'))
             movie_score_content_path = ".//span"
             movie_score_content_object = movie_score_object.find_element_by_xpath(movie_score_content_path)
             movie_score_content = self.get_mao_yan_num_by_object(movie_score_content_object)
@@ -339,6 +339,7 @@ class RequestMaoYanDetail(BaseRequest):
 
         # ================简介 评论============
         mao_yan_detail_bean.introduce_content = ''
+
         comment_list_object = None
         tab_celebrity_list_object = None
         tab_award_list_object = None
